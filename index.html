@@ -3,57 +3,39 @@
     <head>
         <meta charset="utf-8"/>
         <style type="text/css">
-            .line{border: 2px solid greenyellow}
+            .line{border:2px solid greenyellow}
             .bgaqua{background-color: aquamarine;}
+            .reverse{transform: scaleX(-1);}
+            #car{
+                position: absolute;
+                top:180px;
+                left:50px;
+                width:300px;
+            }
+            #man{
+                position: absolute;
+                top:100px;/*180*/
+                left:250px;/*180*/
+                width:40px;
+            }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script>
-        $(document).ready( // 페이지가 로드된 다음에 js실행할 것
-            function(){
-                $('#div3').html("선행JS");
-                $('#btn3').click(function(){
-                    //alert('btn3 click')
-                    $('#div3').html("버튼 클릭되어서 내용 바뀜");
-                })//click event
-
-                $('#btn4').click(function(){
-                    $('$btn5').addClass('line')
-                    $('$btn4').removeClass('line')
-                    $('$car').animate({marginLeft:'+=400'},1000,function(){
-                    console.log('도착'); //console log
-                    })
-                })
-                
-                $('#btn5').click(function(){
-                    $(this).addClass('line') //자신을 선택
-                    $('$btn4').removeClass('line')
-                    $('#car').animate({marginLeft:'-=400'},1000,function(){
-                    console.log('돌아옴')
-                    })
-                })
-            }
-        )
+        <script>// document ready
+        $(function(){// ajax
+            console.log('도큐먼트레디');            
+        })
         </script>
     </head>
     <body>
-        <h1>JS test</h1>
+        <h1>JStest</h1>
         <button id="btn3">div3에 보여줘</button>
-        <button id="btn4">자동차 출발해!</button>
-        <button id="btn5">자동차 돌아와!</button>
         <div id="div1">
         </div>
         <div id="div2">
         </div>
         <div id="div3">
         </div>
-        <div id="car">
-            <img src="car.png" width="300"/>
-        </div>
-        <script>
-            let divs=document.getElementById('div2').innerHTML = "안녕하세요"
-            $('#div1').html('제이쿼리안녕');
-            //alert(div)
-        </script>
+
     </body>
 
 </html>
